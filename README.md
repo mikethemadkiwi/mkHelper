@@ -31,7 +31,7 @@ FloatingHelperText
 ![Image of FloatingHelperText in usage.](examples/floating.png)  
   
   
-EXAMPLE OF USAGE:  
+EXAMPLE OF USAGE: (Produces a floating text helper at legion square)  
 ``` 
 if IsEntityAtCoord(PlayerPedId(), 252.49938964844,-876.37615966797,29.882175445557, 1.0,1.0,1.0, 0,1,0) then                                    
         exports["mkHelper"]:BasicHelperText('FLOATER_DEBUG', 'Press ~INPUT_FRONTEND_ACCEPT~ to trigger', 100, false)
