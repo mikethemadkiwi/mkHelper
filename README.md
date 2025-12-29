@@ -8,6 +8,9 @@ DictionaryNotification - Displays a notification based on dictionary texture ima
 BasicHelperText - Displays Basic Help Text in the top left.  
 FloatingHelperText - Displays a FLoating Help Text at a 3D vector  
   
+PREVIEW VIDEO:  
+GOES HERE  
+  
 Usage:  
   
 PlayerNotification  
