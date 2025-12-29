@@ -32,7 +32,45 @@ FloatingHelperText
   
   
 EXAMPLE OF USAGE:  
-``` boop ```  
+``` 
+if IsEntityAtCoord(mPed, lowendgarage.laptop.pos[1],lowendgarage.laptop.pos[2],lowendgarage.laptop.pos[3], 1.0,1.0,1.0, 0,1,0) then                                    
+        exports["mkHelper"]:BasicHelperText('Garage_Laptop_Text', 'Press ~INPUT_FRONTEND_ACCEPT~ to use Laptop', 100, false)
+        if IsControlJustPressed(0, 201) then
+            --
+                -- BeginTextCommandThefeedPost("")
+                -- AddTextComponentSubstringPlayerName("Hello " .. GetPlayerName(PlayerId()) .. ".")
+                -- EndTextCommandThefeedPostTicker(true, true)
+                Citizen.Wait(1000)
+                exports["mkHelper"]:CharacterNotification("CHAR_GANGAPP", "Login Recieved", '', "Activating Garage Chat for: "..GetPlayerName(PlayerId()).."", 4, false)
+                Citizen.Wait(2000)
+                exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "~o~Franklin", '', "Yo.. Who added the new guy?", 2, true)
+                Citizen.Wait(5000)
+                exports["mkHelper"]:CharacterNotification("CHAR_FRANK_TREV_CONF", "Trevor", '', "Not me... I told you guys I dont understand this shit..", 7, true)
+                Citizen.Wait(5000)
+                exports["mkHelper"]:CharacterNotification("CHAR_ALL_PLAYERS_CONF", "Michael", '', "He's the new guy leasing one of Lester's old Garages.. be nice assholes.", 7, true)
+                Citizen.Wait(5000)
+                exports["mkHelper"]:CharacterNotification("CHAR_MIKE_TREV_CONF", "Trevor", '', "I though this was supposed to be a SECURE form of communication.. WHAT THE HELL MICHAEL", 7, true)
+                Citizen.Wait(7000)
+                exports["mkHelper"]:CharacterNotification("CHAR_FRANK_TREV_CONF", "~o~Franklin", '', "Ay, as long as they're chill... we're cool. Welcome in homie!", 7, true)
+                Citizen.Wait(5000)
+                exports["mkHelper"]:CharacterNotification("CHAR_MIKE_FRANK_CONF", "Michael", '', "He's just mad that he's the last to know everything.", 7, true)
+                Citizen.Wait(4000)
+                exports["mkHelper"]:CharacterNotification("CHAR_MIKE_TREV_CONF", "Trevor", '', "Whatever... I better make money out of this...", 7, true)
+                Citizen.Wait(5000)
+                exports["mkHelper"]:CharacterNotification("CHAR_MICHAEL", "Michael", '', "Ignore those Dickheads.", 2, true)
+                Citizen.Wait(2000)
+                exports["mkHelper"]:CharacterNotification("CHAR_MICHAEL", "Michael", '', "Welcome to the neighbourhood.", 7, true)
+                Citizen.Wait(4000)
+                exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Anonymous $ Transfer", '', "$10,000.00", 9, true)
+                TriggerServerEvent('mrwhitesranch:paythefugger', 10000)
+            --
+        end
+    else
+        if IsEntityAtCoord(mPed, lowendgarage.laptop.pos[1],lowendgarage.laptop.pos[2],lowendgarage.laptop.pos[3], 2.0,2.0,1.0, 0,1,0) then
+            exports["mkHelper"]:FloatingHelperText('Garage_Laptop_Text', 'Garage Laptop', lowendgarage.laptop.pos, 10, false)
+        end
+    end 
+```  
 
     
 Assistance Documentation:  
