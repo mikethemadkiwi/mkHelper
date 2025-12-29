@@ -33,14 +33,10 @@ FloatingHelperText
   
 EXAMPLE OF USAGE:  
 ``` 
-if IsEntityAtCoord(mPed, lowendgarage.laptop.pos[1],lowendgarage.laptop.pos[2],lowendgarage.laptop.pos[3], 1.0,1.0,1.0, 0,1,0) then                                    
-        exports["mkHelper"]:BasicHelperText('Garage_Laptop_Text', 'Press ~INPUT_FRONTEND_ACCEPT~ to use Laptop', 100, false)
+if IsEntityAtCoord(PlayerPedId(), 252.49938964844,-876.37615966797,29.882175445557, 1.0,1.0,1.0, 0,1,0) then                                    
+        exports["mkHelper"]:BasicHelperText('FLOATER_DEBUG', 'Press ~INPUT_FRONTEND_ACCEPT~ to trigger', 100, false)
         if IsControlJustPressed(0, 201) then
             --
-                -- BeginTextCommandThefeedPost("")
-                -- AddTextComponentSubstringPlayerName("Hello " .. GetPlayerName(PlayerId()) .. ".")
-                -- EndTextCommandThefeedPostTicker(true, true)
-                Citizen.Wait(1000)
                 exports["mkHelper"]:CharacterNotification("CHAR_GANGAPP", "Login Recieved", '', "Activating Garage Chat for: "..GetPlayerName(PlayerId()).."", 4, false)
                 Citizen.Wait(2000)
                 exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "~o~Franklin", '', "Yo.. Who added the new guy?", 2, true)
@@ -62,12 +58,11 @@ if IsEntityAtCoord(mPed, lowendgarage.laptop.pos[1],lowendgarage.laptop.pos[2],l
                 exports["mkHelper"]:CharacterNotification("CHAR_MICHAEL", "Michael", '', "Welcome to the neighbourhood.", 7, true)
                 Citizen.Wait(4000)
                 exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Anonymous $ Transfer", '', "$10,000.00", 9, true)
-                TriggerServerEvent('mrwhitesranch:paythefugger', 10000)
             --
         end
     else
-        if IsEntityAtCoord(mPed, lowendgarage.laptop.pos[1],lowendgarage.laptop.pos[2],lowendgarage.laptop.pos[3], 2.0,2.0,1.0, 0,1,0) then
-            exports["mkHelper"]:FloatingHelperText('Garage_Laptop_Text', 'Garage Laptop', lowendgarage.laptop.pos, 10, false)
+        if IsEntityAtCoord(PlayerPedId(), 252.49938964844,-876.37615966797,29.882175445557, 59.0,59.0,1.0, 0,1,0) then
+            exports["mkHelper"]:FloatingHelperText('FLOATER_DEBUG', 'Floating Helper Location ', 252.49938964844,-876.37615966797,29.882175445557, 10, false)
         end
     end 
 ```  
