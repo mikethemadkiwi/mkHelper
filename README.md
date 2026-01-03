@@ -71,7 +71,7 @@ https://wiki.rage.mp/wiki/Textures
 https://docs.fivem.net/docs/game-references/text-formatting/  
   
 -- PLAYER STAT NAMES  
-"PS_SPEC_AB"
+"PS_SPEC_AB"  
 "PS_STAMINA"  
 "PS_LUNG"  
 "PS_STRENGTH"  
