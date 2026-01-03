@@ -83,6 +83,7 @@ https://docs.fivem.net/docs/game-references/text-formatting/
 
   
 EXAMPLE OF USAGE: (Produces examples at route69 motels)  
+![Image of example code in usage.](examples/examples.jpg)  
 ``` 
 WaitTimeratm = 1000
 ------------------------
