@@ -92,6 +92,7 @@ local charcterspot = vector4(1130.8306884766,2643.4975585938,37.729900360107,90.
 local playerspot = vector4(1126.0106201172,2643.4897460938,37.733320236206,90.880821228027)
 local dictspot = vector4(1121.3190917969,2643.4592285156,37.733058929443,89.377571105957)
 local statspot = vector4(1117.9373779297,2643.455078125,37.733695983887,82.238441467285)
+local custstatspot = vector4(1113.4642333984,2643.5876464844,37.733753204346,78.950294494629)
 local debugZone = 260
 ------------------------
 Citizen.CreateThread(function()
@@ -166,10 +167,10 @@ Citizen.CreateThread(function()
                     0.1, 186, 218, 85, 0.8, false, false, 2,
                     false, nil, nil, false)
                     if IsEntityAtCoord(mPed, debguSpot[1],debguSpot[2],debguSpot[3], 1.0,1.0,1.0, 0,1,0) then                                    
-                        exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'This is a BasicHelperText', 100, false)
+                        exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'This is a BasicHelperText, you can use ~g~colors~s~ and ~h~TEXT FORMATTING~h~ too! Even button gfx like ~INPUT_FRONTEND_CANCEL~ ~n~they all display using controller too!', 100, false)
                     else
                         if IsEntityAtCoord(mPed, debguSpot[1],debguSpot[2],debguSpot[3], 25.0,25.0,1.0, 0,1,0) then
-                            exports["mkHelper"]:FloatingHelperText('madkiwi_debug', 'This is a FloatingHelperText', debguSpot, 10, false)
+                            exports["mkHelper"]:FloatingHelperText('madkiwi_debug', 'This is a ~o~Floating~s~ HelperText~n~ it can handle ~h~TEXT FORMATTING~h~', debguSpot, 10, false)
                         end
                     end
                     -- Stat Notifications
@@ -182,6 +183,18 @@ Citizen.CreateThread(function()
                         if IsControlJustPressed(0, 201) then
                             ------------------------                                   
                             exports["mkHelper"]:PlayerStatsNotification('PS_STAMINA', 45, 5, 1000, false)
+                        end
+                    end
+                    -- Stat Notifications
+                    DrawMarker(1, custstatspot[1],custstatspot[2],custstatspot[3] - 0.59, 
+                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0,
+                    0.1, 186, 218, 85, 0.8, false, false, 2,
+                    false, nil, nil, false)
+                    if IsEntityAtCoord(mPed, custstatspot[1],custstatspot[2],custstatspot[3], 1.0,1.0,1.0, 0,1,0) then 
+                        exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to CustomStatsNotification', 100, false)
+                        if IsControlJustPressed(0, 201) then
+                            ------------------------                                   
+                            exports["mkHelper"]:CustomStatsNotification('Weed_Storage', 'Weed Storage Level', 'commonmenu', 'mp_specitem_weed', 45, 5, 1000, false)
                         end
                     end
                 end
