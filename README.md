@@ -4,12 +4,13 @@ Madkiwi's FiveM Helper Library
 Current Exports:  
 PlayerNotification - Displays a notification using the player's headshot. useful for showing personal messages or character related info.  
 CharacterNotification - Displays a notification based on the character headshot requested.  
-DictionaryNotification - Displays a notification based on dictionary texture images. !!REQUIRES A DICTIONARY TO LOAD!!  
+DictionaryNotification - Displays a notification based on dictionary texture images.  
 BasicHelperText - Displays Basic Help Text in the top left.  
 FloatingHelperText - Displays a FLoating Help Text at a 3D vector  
+MissionHelperText - Displays a subtitle style mission Text  
+PlayerStatsNotification - Displays a Player Stat Notification Based on the Player  
+CustomStatsNotification - Displays a Stat Notification Based on Texture Dictionary  
   
-PREVIEW VIDEO:  
-GOES HERE  
   
 Usage:  
   
