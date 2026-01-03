@@ -47,7 +47,7 @@ CustomStatsNotification
   
 Change Amount will cause White flashing on Positive Value and Red on Negative Value:  
 Setting it to 0 will make NO visual Change to value.  
-![Image of redstats in usage.](examples/redstats.mp4)  
+[video of redstats in usage.](examples/statsred.mp4)  
 
   
 EXAMPLE OF USAGE: (Produces a floating text helper at legion square)  
