@@ -34,7 +34,7 @@ FloatingHelperText
 ![Image of FloatingHelperText in usage.](examples/floating.png)  
   
 MissionHelperText  
-```exports["mkHelper"]:MissionHelperText('UNIQUE_TEXT_STRING_ID', "TITLE_STRING", POSITION_VECTOR3, DURATION_INT, PLAYSOUND_BOOLEAN)```  
+```exports["mkHelper"]:MissionHelperText('UNIQUE_TEXT_STRING_ID', "TITLE_STRING", DURATION_INT, PLAYSOUND_BOOLEAN)```  
 ![Image of MissionHelperText in usage.](examples/mission.png)  
   
 PlayerStatsNotification  
@@ -48,6 +48,37 @@ CustomStatsNotification
 Change Amount will cause White flashing on Positive Value and Red on Negative Value:  
 Setting it to 0 will make NO visual Change to value.  
 [video of redstats in usage.](examples/statsred.mp4)  
+  
+Assistance Documentation:  
+  
+-- Icon types:  
+No Icon: 0, 4, 5, 6  
+Speech Bubble: 1  
+Message: 2  
+Friend Request: 3  
+Arrow: 7  
+RP: 8  
+Money: 9  
+  
+-- Character Textures:  
+https://wiki.rage.mp/wiki/Notification_Pictures  
+  
+-- Dictionary Textures:  
+https://wiki.rage.mp/wiki/Textures
+  
+-- Text Formatting for MissionHelper:  
+https://docs.fivem.net/docs/game-references/text-formatting/  
+  
+-- PLAYER STAT NAMES  
+"PS_SPEC_AB"
+"PS_STAMINA"  
+"PS_LUNG"  
+"PS_STRENGTH"  
+"PS_DRIVING"  
+"PS_FLYING"  
+"PS_SHOOTING"  
+"PS_STEALTH"  
+
 
   
 EXAMPLE OF USAGE: (Produces a floating text helper at legion square)  
@@ -85,34 +116,3 @@ if IsEntityAtCoord(PlayerPedId(), 252.49938964844,-876.37615966797,29.8821754455
         end
     end 
 ```  
-
-    
-Assistance Documentation:  
-  
--- Icon types:  
-No Icon: 0, 4, 5, 6  
-Speech Bubble: 1  
-Message: 2  
-Friend Request: 3  
-Arrow: 7  
-RP: 8  
-Money: 9  
-  
--- Character Textures:  
-https://wiki.rage.mp/wiki/Notification_Pictures  
-  
--- Dictionary Textures:  
-https://wiki.rage.mp/wiki/Textures
-  
--- Text Formatting for MissionHelper:  
-https://docs.fivem.net/docs/game-references/text-formatting/  
-  
--- PLAYER STAT NAMES  
-"PS_SPEC_AB"
-"PS_STAMINA"  
-"PS_LUNG"  
-"PS_STRENGTH"  
-"PS_DRIVING"  
-"PS_FLYING"  
-"PS_SHOOTING"  
-"PS_STEALTH"  
