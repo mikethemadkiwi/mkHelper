@@ -129,7 +129,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to CharacterNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "~o~Franklin", '', "Yo.. Who added the new guy?", 2, true)
+                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "Title", 'Subtitle', "notification msg", 2, true)
                             ------------------------                        
                         end
                     end
@@ -142,7 +142,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to DictionaryNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Anonymous $ Transfer", '', "$10,000.00", 9, true)
+                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Title", 'Subtitle', "notification msg", 9, true)
                             ------------------------                        
                         end
                     end
@@ -155,7 +155,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to PlayerNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:PlayerNotification('Player', 'subtitle', "wot?", 2, true)
+                            exports["mkHelper"]:PlayerNotification("Title", 'Subtitle', "notification msg", 2, true)
                             ------------------------                        
                         end
                     end
