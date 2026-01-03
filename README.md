@@ -116,7 +116,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to MissionHelperText', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:MissionHelperText('madkiwi_debug2', '~g~Madkiwi~s~ is a Nerd!~n~He can eat a ~h~big~h~ ~y~Banana~s~~n~ ~boop~', 9000, false)
+                            exports["mkHelper"]:MissionHelperText('madkiwi_debug2', '~g~Madkiwi~s~ is a Nerd!~n~He can eat a ~h~big~h~ ~y~Banana~s~~n~ ~boop~', 5000, false)
                             ------------------------          
                         end
                     end
@@ -129,7 +129,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to CharacterNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "Title", 'Subtitle', "notification msg", 2, true)
+                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "Title", 'Subtitle', "notification", 2, true)
                             ------------------------                        
                         end
                     end
@@ -142,7 +142,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to DictionaryNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Title", 'Subtitle', "notification msg", 9, true)
+                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Title", 'Subtitle', "notification", 9, true)
                             ------------------------                        
                         end
                     end
@@ -155,7 +155,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to PlayerNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:PlayerNotification("Title", 'Subtitle', "notification msg", 2, true)
+                            exports["mkHelper"]:PlayerNotification("Title", 'Subtitle', "notification", 2, true)
                             ------------------------                        
                         end
                     end
