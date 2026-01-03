@@ -91,6 +91,7 @@ local missionspot = vector4(1135.2130126953,2643.4765625,37.730884552002,178.131
 local charcterspot = vector4(1130.8306884766,2643.4975585938,37.729900360107,90.499114990234)
 local playerspot = vector4(1126.0106201172,2643.4897460938,37.733320236206,90.880821228027)
 local dictspot = vector4(1121.3190917969,2643.4592285156,37.733058929443,89.377571105957)
+local statspot = vector4(1117.9373779297,2643.455078125,37.733695983887,82.238441467285)
 local debugZone = 260
 ------------------------
 Citizen.CreateThread(function()
@@ -129,7 +130,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to CharacterNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "Title", 'Subtitle', "notification", 2, true)
+                            exports["mkHelper"]:CharacterNotification("CHAR_FRANKLIN", "Character", 'Subtitle', "notification", 2, true)
                             ------------------------                        
                         end
                     end
@@ -142,7 +143,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to DictionaryNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Title", 'Subtitle', "notification", 9, true)
+                            exports["mkHelper"]:DictionaryNotification("commonmenu", "mp_specitem_cash", "Dictionary", 'Subtitle', "notification", 9, true)
                             ------------------------                        
                         end
                     end
@@ -155,7 +156,7 @@ Citizen.CreateThread(function()
                         exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to PlayerNotification', 100, false)
                         if IsControlJustPressed(0, 201) then
                             ------------------------
-                            exports["mkHelper"]:PlayerNotification("Title", 'Subtitle', "notification", 2, true)
+                            exports["mkHelper"]:PlayerNotification("Player", 'Subtitle', "notification", 2, true)
                             ------------------------                        
                         end
                     end
@@ -169,6 +170,18 @@ Citizen.CreateThread(function()
                     else
                         if IsEntityAtCoord(mPed, debguSpot[1],debguSpot[2],debguSpot[3], 25.0,25.0,1.0, 0,1,0) then
                             exports["mkHelper"]:FloatingHelperText('madkiwi_debug', 'This is a FloatingHelperText', debguSpot, 10, false)
+                        end
+                    end
+                    -- Stat Notifications
+                    DrawMarker(1, statspot[1],statspot[2],statspot[3] - 0.59, 
+                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0,
+                    0.1, 186, 218, 85, 0.8, false, false, 2,
+                    false, nil, nil, false)
+                    if IsEntityAtCoord(mPed, statspot[1],statspot[2],statspot[3], 1.0,1.0,1.0, 0,1,0) then 
+                        exports["mkHelper"]:BasicHelperText('madkiwi_debug', 'Press ~INPUT_FRONTEND_ACCEPT~ to PlayerStatsNotification', 100, false)
+                        if IsControlJustPressed(0, 201) then
+                            ------------------------                                   
+                            exports["mkHelper"]:PlayerStatsNotification('PS_STAMINA', 45, 5, 1000, false)
                         end
                     end
                 end
