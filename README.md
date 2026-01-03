@@ -33,6 +33,22 @@ FloatingHelperText
 ```exports["mkHelper"]:FloatingHelperText('UNIQUE_TEXT_STRING_ID', "TITLE_STRING", POSITION_VECTOR3, DURATION_INT, PLAYSOUND_BOOLEAN)```  
 ![Image of FloatingHelperText in usage.](examples/floating.png)  
   
+MissionHelperText  
+```exports["mkHelper"]:MissionHelperText('UNIQUE_TEXT_STRING_ID', "TITLE_STRING", POSITION_VECTOR3, DURATION_INT, PLAYSOUND_BOOLEAN)```  
+![Image of MissionHelperText in usage.](examples/mission.png)  
+  
+PlayerStatsNotification  
+```exports["mkHelper"]:PlayerStatsNotification('STATNAME', CURRENT_VALUE, CHANGE_AMOUNT, DURATION_INT, PLAYSOUND_BOOLEAN)```  
+![Image of PlayerStatsNotification in usage.](examples/playerstats.png)  
+  
+CustomStatsNotification  
+```exports["mkHelper"]:CustomStatsNotification('UNIQUE_TEXT_STRING_ID', "TITLE_STRING", "TEXTURE_DICT", "TXD_ITEM_NAME", CURRENT_VALUE, CHANGE_AMOUNT, DURATION_INT, PLAYSOUND_BOOLEAN)```  
+![Image of CustomStatsNotification in usage.](examples/customstats.png)  
+  
+Change Amount will cause White flashing on Positive Value and Red on Negative Value:  
+Setting it to 0 will make NO visual Change to value.  
+![Image of redstats in usage.](examples/redstats.mp4)  
+
   
 EXAMPLE OF USAGE: (Produces a floating text helper at legion square)  
 ``` 
@@ -86,4 +102,17 @@ Money: 9
 https://wiki.rage.mp/wiki/Notification_Pictures  
   
 -- Dictionary Textures:  
-https://wiki.rage.mp/wiki/Textures  
+https://wiki.rage.mp/wiki/Textures
+  
+-- Text Formatting for MissionHelper:  
+https://docs.fivem.net/docs/game-references/text-formatting/  
+  
+-- PLAYER STAT NAMES  
+"PS_SPEC_AB"
+"PS_STAMINA"  
+"PS_LUNG"  
+"PS_STRENGTH"  
+"PS_DRIVING"  
+"PS_FLYING"  
+"PS_SHOOTING"  
+"PS_STEALTH"  

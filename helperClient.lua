@@ -70,3 +70,47 @@ function FloatingHelperText(helperName, helperText, helperVector3, helperDuratio
 end
 exports("FloatingHelperText", FloatingHelperText)
 ------------------------------------------------------------------------------------------------------------------------------------------
+-- Subtitles Text
+function MissionHelperText(helperName, helperText, helperDuration, PlaySound)
+    AddTextEntry(helperName, helperText)
+    BeginTextCommandPrint(helperName)
+    EndTextCommandPrint(helperDuration, 1)
+    if PlaySound then PlaySoundFrontend(GetSoundId(), "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", true) end
+end
+exports("MissionHelperText", MissionHelperText)
+------------------------------------------------------------------------------------------------------------------------------------------
+-- Player Stats
+function PlayerStatsNotification(helperStatName, oldValue, newValue, helperDuration, PlaySound)
+    local handle = RegisterPedheadshot(PlayerPedId())
+    while not IsPedheadshotReady(handle) or not IsPedheadshotValid(handle) do
+        Citizen.Wait(0)
+    end
+    local txd = GetPedheadshotTxdString(handle)
+    BeginTextCommandThefeedPost("PS_UPDATE")
+    AddTextComponentInteger(oldValue)
+    local p1 = 14
+    EndTextCommandThefeedPostStats(helperStatName, 13, newValue, oldValue, false, txd, txd)
+    EndTextCommandThefeedPostTicker(false, true)
+    UnregisterPedheadshot(handle)
+    if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
+end
+exports("PlayerStatsNotification", PlayerStatsNotification)
+------------------------------------------------------------------------------------------------------------------------------------------
+-- Custom Stats
+function CustomStatsNotification(cStatName, cstatText, notiDict, texturename, oldValue, newValue, helperDuration, PlaySound)
+    RequestStreamedTextureDict(notiDict)
+    while not HasStreamedTextureDictLoaded(notiDict) do
+        Citizen.Wait(0)
+    end
+    AddTextEntry(cStatName, cstatText)
+    BeginTextCommandThefeedPost("PS_UPDATE")
+    AddTextComponentInteger(oldValue)
+    local p1 = 14
+    EndTextCommandThefeedPostStats(cStatName, 13, newValue, oldValue, false, notiDict, texturename)
+    EndTextCommandThefeedPostTicker(false, true)
+    UnregisterPedheadshot(handle)
+    if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
+    SetStreamedTextureDictAsNoLongerNeeded(notiDict)
+end
+exports("CustomStatsNotification", CustomStatsNotification)
+------------------------------------------------------------------------------------------------------------------------------------------
