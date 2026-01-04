@@ -1,5 +1,4 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------
 -- Player Notification. Shows as player notification headshot.
 function PlayerNotification(SenderName, Subject, MessageText, IconType, PlaySound)
     local handle = RegisterPedheadshot(PlayerPedId())
@@ -55,7 +54,7 @@ function BasicHelperText(helperName, helperText, helperDuration, PlaySound)
     AddTextEntry(helperName, helperText)
     BeginTextCommandDisplayHelp(helperName)
     EndTextCommandDisplayHelp(0, false, false, helperDuration)
-    if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
+    if PlaySound then PlaySoundFrontend(GetSoundId(), "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", true) end
 end
 exports("BasicHelperText", BasicHelperText)
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +65,7 @@ function FloatingHelperText(helperName, helperText, helperVector3, helperDuratio
     SetFloatingHelpTextStyle(0, true, 2, -1, 3, 0)
     BeginTextCommandDisplayHelp(helperName)
     EndTextCommandDisplayHelp(1, false, false, helperDuration)
-    if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
+    if PlaySound then PlaySoundFrontend(GetSoundId(), "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", true) end
 end
 exports("FloatingHelperText", FloatingHelperText)
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,7 +88,7 @@ function PlayerStatsNotification(helperStatName, oldValue, newValue, helperDurat
     BeginTextCommandThefeedPost("PS_UPDATE")
     AddTextComponentInteger(oldValue)
     local p1 = 14
-    EndTextCommandThefeedPostStats(helperStatName, 13, newValue, oldValue, false, txd, txd)
+    EndTextCommandThefeedPostStats(helperStatName, 14, newValue, oldValue, false, txd, txd)
     EndTextCommandThefeedPostTicker(false, true)
     UnregisterPedheadshot(handle)
     if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
@@ -106,7 +105,7 @@ function CustomStatsNotification(cStatName, cstatText, notiDict, texturename, ol
     BeginTextCommandThefeedPost("PS_UPDATE")
     AddTextComponentInteger(oldValue)
     local p1 = 14
-    EndTextCommandThefeedPostStats(cStatName, 13, newValue, oldValue, false, notiDict, texturename)
+    EndTextCommandThefeedPostStats(cStatName, 14, newValue, oldValue, false, notiDict, texturename)
     EndTextCommandThefeedPostTicker(false, true)
     UnregisterPedheadshot(handle)
     if PlaySound then PlaySoundFrontend(GetSoundId(), "Text_Arrive_Tone", "Phone_SoundSet_Default", true) end
